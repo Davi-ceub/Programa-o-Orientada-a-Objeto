@@ -1,39 +1,46 @@
-package negócio;
+package negocio;
 
 public class Produto {
- // propriedades da classe
+	// Propriedades da classe 
 	private String nome = "";
-	private Tipo objTipo = null;
-	private double preco = 0;
+	private Estante objEstante = null;
+	private int quantidade = 0;
 	
-	// métodos construtores da classe
+	// Métodos construtores da classe
 	public Produto() {
-		super();
+		
 	}
-	public Produto(String nome, Tipo objTipo, double preco) {
-		super();
+
+	public Produto(String nome, Estante objEstante, int quantidade) {
 		this.nome = nome;
-		this.objTipo = objTipo;
-		this.preco = preco;
-	} 
-	// métodos de acesso da classe
+		this.objEstante = objEstante;
+		this.quantidade = quantidade;
+	}
+	// Métodos de acesso da classe
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Tipo getObjTipo() {
-		return objTipo;
+
+	public Estante getObjEstante() {
+		return objEstante;
 	}
-	public void setObjTipo(Tipo objTipo) {
-		this.objTipo = objTipo;
+
+	public void setObjEstante(Estante objEstante) {
+		this.objEstante = objEstante;
 	}
-	public double getPreco() {
-		return preco;
+
+	public int getQuantidade() {
+		return quantidade;
 	}
-	public void setPreco(double preco) {
-		this.preco = preco;
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
 	}
 	
+
 }
