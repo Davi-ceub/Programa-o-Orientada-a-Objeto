@@ -51,6 +51,24 @@ public class Painel extends JPanel {
 	     g.drawLine(525, 500, 550, 550);
 	     g.drawLine(525, 550, 500, 600);
 	     g.drawLine(525, 550, 550, 600);
+		  // Avião
+	     g.drawLine(500, 50, 700, 50);
+	     g.drawLine(500, 100,700, 100);
+	     g.drawLine(500, 50,450 , 75);
+	     g.drawLine(500, 100, 450, 75);
+	     g.drawLine(700, 100, 850, 50);
+	     g.drawLine(700, 50, 850, 50);
+	     g.drawLine(600, 75, 600, 200);
+	     g.drawLine(600, 200, 650, 220);
+	     g.drawLine(650, 220, 650, 75);
+	     g.drawLine(600, 50, 600, 1);
+	     g.drawLine(650, 50, 650, 1);
+	     
+	     // Prédio
+	     g.setColor(Color.gray);
+	     g.fillRect(0,0 , 100, 500);
+	     g.setColor(Color.gray);
+	     g.fillRect(150, 0, 100, 500);
 		}
 	
 }
