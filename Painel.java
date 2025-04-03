@@ -69,6 +69,20 @@ public class Painel extends JPanel {
 	     g.fillRect(0,0 , 100, 500);
 	     g.setColor(Color.gray);
 	     g.fillRect(150, 0, 100, 500);
+
+		  // bomba
+	     g.setColor(Color.DARK_GRAY);
+	     g.drawRect(450, 150, 100, 200);
+	     g.drawLine(450,350,500,400);
+	     g.drawLine(550, 350, 500, 400);
+	     g.fillRect(450, 150, 100, 200);
+	     
+	     //simbolo
+	     g.setColor(Color.yellow);
+	     g.fillOval(450, 200, 100, 100);
+	     g.setColor(Color.black);
+	     g.drawLine(450,200,550,300);
+	     g.drawLine(550,200,450,300);
 		}
 	
 }
