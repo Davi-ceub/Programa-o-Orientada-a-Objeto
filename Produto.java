@@ -1,22 +1,27 @@
-package negocio;
+package Negócio;
 
 public class Produto {
-	// Propriedades da classe 
+// propriedades da classe
 	private String nome = "";
-	private Estante objEstante = null;
-	private int quantidade = 0;
-	
-	// Métodos construtores da classe
+	private double preco = 0;
+	private Tipo objTipo = null;
+	private boolean perecivel = false;
+	private String detalhamento = "";
+
+// métodos construtores da classe	
 	public Produto() {
-		
+		super();
 	}
 
-	public Produto(String nome, Estante objEstante, int quantidade) {
+	public Produto(String nome, double preco, Tipo objTipo, boolean perecivel, String detalhamento) {
+		super();
 		this.nome = nome;
-		this.objEstante = objEstante;
-		this.quantidade = quantidade;
+		this.preco = preco;
+		this.objTipo = objTipo;
+		this.perecivel = perecivel;
+		this.detalhamento = detalhamento;
 	}
-	// Métodos de acesso da classe
+// métodos de aceso da classe
 
 	public String getNome() {
 		return nome;
@@ -26,21 +31,36 @@ public class Produto {
 		this.nome = nome;
 	}
 
-	public Estante getObjEstante() {
-		return objEstante;
+	public double getPreco() {
+		return preco;
 	}
 
-	public void setObjEstante(Estante objEstante) {
-		this.objEstante = objEstante;
+	public void setPreco(double preco) {
+		this.preco = preco;
 	}
 
-	public int getQuantidade() {
-		return quantidade;
+	public Tipo getObjTipo() {
+		return objTipo;
 	}
 
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
+	public void setObjTipo(Tipo objTipo) {
+		this.objTipo = objTipo;
 	}
-	
+
+	public boolean getPerecivel() {
+		return perecivel;
+	}
+
+	public void setPerecivel(boolean perecivel) {
+		this.perecivel = perecivel;
+	}
+
+	public String getDetalhamento() {
+		return detalhamento;
+	}
+
+	public void setDetalhamento(String detalhamento) {
+		this.detalhamento = detalhamento;
+	}
 
 }

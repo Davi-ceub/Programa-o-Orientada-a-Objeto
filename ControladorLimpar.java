@@ -2,33 +2,39 @@ package Apresentação;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
-import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class ControladorLimpar implements ActionListener{
+public class ControladorLimpar implements ActionListener {
 	// propriedades da classe
 	private JTextField txtNome = null;
-	private JRadioButton optMasculino = null;
-	private JTextField txtEndereco = null;
-	private JComboBox<String> cboUf = null;
-	// NÃO HÁ CONSTRUTOR DE CLASSE VAZIO PARA CONTROLES A NÃO SER PARA O BOTÃO SAIR
-	// método construtor cheio da classe
-   public ControladorLimpar(JTextField txtNome, JRadioButton optMasculino, JTextField endereco,
-			JComboBox<String> cboUf) {
+	private JTextField txtPreco = null;
+	private JComboBox<String> cboTipo = null;
+	private JCheckBox chkPerecivel = null;
+	private JTextArea txtDetalhamento = null;
+
+	// métodos construtores
+
+	public ControladorLimpar(JTextField txtNome, JTextField txtPreco, JComboBox<String> cboTipo, JCheckBox chkPerecivel,
+			JTextArea txtDetalhamento) {
 		super();
 		this.txtNome = txtNome;
-		this.optMasculino = optMasculino;
-		this.txtEndereco = endereco;
-		this.cboUf = cboUf;
+		this.txtPreco = txtPreco;
+		this.cboTipo = cboTipo;
+		this.chkPerecivel = chkPerecivel;
+		this.txtDetalhamento = txtDetalhamento;
 	}
 
-// método implementado da interface
-public void actionPerformed(ActionEvent e) {
-	   txtNome.setText("");
-	   optMasculino.setSelected(true);
-	   txtEndereco.setText("");
-	   cboUf.setSelectedIndex(0);
-   }
+	// método implementado da interface
+	public void actionPerformed(ActionEvent e) {
+		txtNome.setText("");
+		txtPreco.setText("");
+		cboTipo.setSelectedIndex(0);
+		chkPerecivel.setSelected(false);
+		txtDetalhamento.setText("");
+
+	}
+
 }
