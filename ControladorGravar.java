@@ -1,59 +1,40 @@
-package apresentação;
+package Apresentação;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import negócio.Fabricante;
-import negócio.Veículo;
+import Negócio.Pessoa;
 
 public class ControladorGravar implements ActionListener {
-// propriedades da classe
-	private JComboBox<String> cboFabricante = null;
-	private JTextField txtModelo = null;
-	private JComboBox<String> cboCor = null;
-	private JCheckBox chkTetoSolar = null;
+	// propriedades da classe
+	private JTextField txtNome = null;
+	private JTextField txtEndereco = null;
+	private JTextField txtTelefone = null;
 
-// construtor cheio
-	public ControladorGravar(JComboBox<String> cboFabricante, JTextField txtModelo, JComboBox<String> cboCor,
-			JCheckBox chkTetoSolar) {
+	// construtor cheio
+	public ControladorGravar(JTextField txtNome, JTextField txtEndereco, JTextField txtTelefone) {
 		super();
-		this.cboFabricante = cboFabricante;
-		this.txtModelo = txtModelo;
-		this.cboCor = cboCor;
-		this.chkTetoSolar = chkTetoSolar;
+		this.txtNome = txtNome;
+		this.txtEndereco = txtEndereco;
+		this.txtTelefone = txtTelefone;
 	}
-
-// modelo implementado da interface
+	// modelo implementado da interface
 	public void actionPerformed(ActionEvent e) {
-		// critica de dados
-		if (cboFabricante.getSelectedIndex() == 0) {
-			JOptionPane.showMessageDialog(null, "Campo Fabricante obrigatório !");
-			return;
-		}
-		if (txtModelo.getText().equals("")) {
-			JOptionPane.showMessageDialog(null, " Campo Modelo obrigatório !");
-			return;
-		}
-		if (cboCor.getSelectedIndex() == 0) {
-			JOptionPane.showMessageDialog(null, "Campo Cor obrigatório !");
-			return;
-		}
-		// composição do objeto
-		Veículo objVeiculo = new Veículo();
-		objVeiculo.setObjFabricante(new Fabricante(cboFabricante.getSelectedItem().toString()));
-		objVeiculo.setModelo(txtModelo.getText());
-		objVeiculo.setCor(cboCor.getSelectedItem().toString());
-		objVeiculo.setTetoSolar(chkTetoSolar.isSelected());
+		Pessoa objPessoa = new Pessoa();
+		objPessoa.setNome(txtNome.getText());
+		objPessoa.setEndereco(txtEndereco.getText());
+		objPessoa.setTelefone(txtTelefone.getText());
 
-		JOptionPane.showMessageDialog(null,
-				"Gravação realizada com sucesso !\n\n" + "Fabricante: " + objVeiculo.getObjFabricante().getNome() + "\n"
-						+ "Modelo: " + objVeiculo.getModelo() + "\n" + "Cor: " + objVeiculo.getCor() + "\n"
-						+ "Teto Solar: " + (objVeiculo.isTetoSolar() ? "SIM" : "NÃO"));
+		try {
+			objPessoa.persistir();
+			JOptionPane.showMessageDialog(null, "Gravação Realizada com Sucesso");
+		} catch (Exception erro) {
+			JOptionPane.showMessageDialog(null, erro);
+		}
+
 	}
 
 }

@@ -1,38 +1,42 @@
 package Negócio;
 
+import Persistência.PessoaDAO;
+
 public class Pessoa {
-	// propriedades da classe
+ // propriedades da classe
+	private int id = 0;
 	private String nome = "";
-	private boolean sexo = false;
 	private String endereco = "";
-	private Uf objUf = null;
-// métodos construtores da classe
+	private String telefone = "";
+	
+	// métodos construtores da classe
 	public Pessoa() {
 		super();
 	}
 
-	public Pessoa(String nome, boolean sexo, String endereco, Uf objUf) {
+	public Pessoa(int id, String nome, String endereco, String telefone) {
 		super();
+		this.id = id;
 		this.nome = nome;
-		this.sexo = sexo;
 		this.endereco = endereco;
-		this.objUf = objUf;
+		this.telefone = telefone;
 	}
-// métodos de acesso da classe
+	// métodos de acesso da classe
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getNome() {
 		return nome;
 	}
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public boolean isSexo() {
-		return sexo;
-	}
-
-	public void setSexo(boolean sexo) {
-		this.sexo = sexo;
 	}
 
 	public String getEndereco() {
@@ -43,12 +47,17 @@ public class Pessoa {
 		this.endereco = endereco;
 	}
 
-	public Uf getObjUf() {
-		return objUf;
+	public String getTelefone() {
+		return telefone;
 	}
 
-	public void setObjUf(Uf objUf) {
-		this.objUf = objUf;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
+	// para cada classe de negócio vc precisa construir uma classe de conexao na persitencia
 
-}
+	// métodos d classe
+	public void persistir() throws Exception {
+		new PessoaDAO().persistir(this);
+	}
+ }
