@@ -1,23 +1,44 @@
-package negocio;
+package Negócio;
+
+import java.util.Collection;
+
+import Persistência.AutorDAO;
 
 public class Autor {
-   // Propriedades da classe
+// propriedades da classe
+	private int id = 0;
 	private String nome = "";
-	
- // Métodos construtores da classe
+
+// métodos construtores da classe
 	public Autor() {
+		super();
 	}
-	
-	public Autor(String nome) {
+
+	public Autor(int id, String nome) {
+		super();
+		this.id = id;
 		this.nome = nome;
+		// métodos de acesso da classe
 	}
-	
-// Métodos de acesso da classe
-	public String getnome() {
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNome() {
 		return nome;
 	}
-	
+
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	// métodos da classe
+	public static Collection<Autor> getTodos() throws Exception {
+		return new AutorDAO().getTodos();
 	}
 }

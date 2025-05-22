@@ -3,38 +3,39 @@ package Apresentação;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import Negócio.Pessoa;
+import Negócio.Autor;
+import Negócio.Livro;
 
 public class ControladorGravar implements ActionListener {
 	// propriedades da classe
-	private JTextField txtNome = null;
-	private JTextField txtEndereco = null;
-	private JTextField txtTelefone = null;
+	private JTextField txtTitulo = null;
+	private JComboBox<String> cboAutor = null;
 
 	// construtor cheio
-	public ControladorGravar(JTextField txtNome, JTextField txtEndereco, JTextField txtTelefone) {
+
+	public ControladorGravar(JTextField txtTitulo, JComboBox<String> cboAutor) {
 		super();
-		this.txtNome = txtNome;
-		this.txtEndereco = txtEndereco;
-		this.txtTelefone = txtTelefone;
+		this.txtTitulo = txtTitulo;
+		this.cboAutor = cboAutor;
 	}
-	// modelo implementado da interface
+
+// modelo implementado da interface
 	public void actionPerformed(ActionEvent e) {
-		Pessoa objPessoa = new Pessoa();
-		objPessoa.setNome(txtNome.getText());
-		objPessoa.setEndereco(txtEndereco.getText());
-		objPessoa.setTelefone(txtTelefone.getText());
+		Livro objLivro = new Livro();
+
+		objLivro.setTitulo(txtTitulo.getText());
+		objLivro.setObjAutor(new Autor(cboAutor.getSelectedIndex(), ""));
 
 		try {
-			objPessoa.persistir();
-			JOptionPane.showMessageDialog(null, "Gravação Realizada com Sucesso");
+			objLivro.persistir();
+			JOptionPane.showMessageDialog(null, "Gravação realizada com sucesso !");
 		} catch (Exception erro) {
 			JOptionPane.showMessageDialog(null, erro);
 		}
-
 	}
 
 }

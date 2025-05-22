@@ -8,16 +8,16 @@ public class BancoDeDados {
 	private Connection objConexao = null;
 
 	// métodos da classe
+	Connection getObjConexao() {
+		return objConexao;
+	}
+
 	void conectar() throws Exception {
-		objConexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/aula12?"
+		objConexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/aula13?"
 				+ "user=root&password=ceub123456&" + "serverTimezone=UTC&useSSL=false");
 	}
 
 	void desconectar() throws Exception {
 		objConexao.close();
-	}
-
-	Connection getObjConexao() {
-		return objConexao;
 	}
 }
