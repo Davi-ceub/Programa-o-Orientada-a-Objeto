@@ -1,4 +1,4 @@
-package Persistência;
+package Persistencia;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,7 +13,7 @@ public class BancoDeDados {
 	}
 
 	void conectar() throws Exception {
-		objConexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/aula13?"
+		objConexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/aula14?"
 				+ "user=root&password=ceub123456&" + "serverTimezone=UTC&useSSL=false");
 	}
 

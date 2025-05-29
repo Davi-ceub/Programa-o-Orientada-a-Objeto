@@ -1,4 +1,4 @@
-package Apresentação;
+package Apresentacao;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,19 +8,27 @@ import javax.swing.JTextField;
 
 public class ControladorLimpar implements ActionListener {
 // propriedades da classe
-	private JTextField txtTitulo = null;
-	private JComboBox<String> cboAutor = null;
+	private JTextField txtidTurma = null;
+	private JComboBox<String> cboDisciplina = null;
+	private JComboBox<String> cboProfessor = null;
+	private JTextField txtLetra = null;
 
 	// construtor cheio
-	public ControladorLimpar(JTextField txtTitulo, JComboBox<String> cboAutor) {
+	public ControladorLimpar(JTextField txtidTurma, JComboBox<String> cboDisciplina, JComboBox<String> cboProfessor,
+			JTextField txtLetra) {
 		super();
-		this.txtTitulo = txtTitulo;
-		this.cboAutor = cboAutor;
+		this.txtidTurma = txtidTurma;
+		this.cboDisciplina = cboDisciplina;
+		this.cboProfessor = cboProfessor;
+		this.txtLetra = txtLetra;
 	}
 
-	// método implementado da interface
+// método implementado da interface
 	public void actionPerformed(ActionEvent e) {
-		txtTitulo.setText("");
-		cboAutor.setSelectedIndex(0);
+		txtidTurma.setText("");
+		cboDisciplina.setSelectedIndex(0);
+		cboProfessor.setSelectedIndex(0);
+		txtLetra.setText("");
 	}
+
 }

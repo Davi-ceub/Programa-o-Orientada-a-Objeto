@@ -1,37 +1,53 @@
-package negócio;
+package Negócio;
+
+import java.util.Collection;
+
+import Persistencia.ProfessorDAO;
 
 public class Professor {
-// propriedades da classe 
-private String nome = "";
-private String titulo = "";
-private double salario = 0;
-// métodos construtores da classe
-public Professor() {
-	super();
-}
-public Professor(String nome, String titulo, double salario) {
-	super();
-	this.nome = nome;
-	this.titulo = titulo;
-	this.salario = salario;
-}
-// métodos de acesso da classe
-public String getNome() {
-	return nome;
-}
-public void setNome(String nome) {
-	this.nome = nome;
-}
-public String getTitulo() {
-	return titulo;
-}
-public void setTitulo(String titulo) {
-	this.titulo = titulo;
-}
-public double getSalario() {
-	return salario;
-}
-public void setSalario(double salario) {
-	this.salario = salario;
-}
+// propriedades da classe
+	private int id = 0;
+	private String nome = "";
+	private String titulacao = "";
+	
+	// métodos construtores da classe
+	public Professor() {
+		super();
+	}
+
+	public Professor(int id, String nome, String titulacao) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.titulacao = titulacao;
+	}
+ // métodos de acesso da classe
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getTitulacao() {
+		return titulacao;
+	}
+
+	public void setTitulacao(String titulacao) {
+		this.titulacao = titulacao;
+	}
+	// métodos da classe
+		public static Collection<Professor> getTodos() throws Exception {
+			return new ProfessorDAO().getTodos();
+		}
+
 }
