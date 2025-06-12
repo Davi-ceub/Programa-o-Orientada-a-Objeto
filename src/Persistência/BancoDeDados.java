@@ -13,7 +13,7 @@ public class BancoDeDados {
 	}
 
 	void conectar() throws Exception {
-		objConexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/aula15?"
+		objConexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/aula16?"
 				+ "user=root&password=ceub123456&" + "serverTimezone=UTC&useSSL=false");
 	}
 
